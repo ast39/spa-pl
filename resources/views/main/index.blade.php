@@ -7,8 +7,12 @@
     @include('components/index/advantages')
     @include('components/index/individual')
     @include('components/index/interior')
-    
+
     <!-- Модальные окна -->
     @include('components/modal/masseuses')
     @include('components/modal/programs')
+@endsection
+
+@section('title')
+    {{ __('Рандеву :: Клуб наслаждений') }}
 @endsection
