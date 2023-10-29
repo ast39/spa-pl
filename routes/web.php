@@ -3,6 +3,7 @@
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\GirlsController;
 use App\Http\Controllers\InteriorController;
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProgramsController;
@@ -19,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('lang/{lang}', LanguageController::class)->name('lang.switch');
 
 Route::get('/', MainController::class)->name('main.index');
 
