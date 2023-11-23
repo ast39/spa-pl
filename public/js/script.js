@@ -47,10 +47,7 @@
                 let block = $(this),
                     block_video = block.data('init_video'),
                     block_poster = block.data('poster'),
-                    video_id = block_video.replaceAll('/', '').replaceAll('.', '');
-                    
-                block.attr('id', video_id);
-                    
+                    video_id = block.attr('id');
                     
                 player_list[video_id] = jwplayer(video_id).setup({
                     responsive: true,

@@ -21,6 +21,7 @@
 
         <!-- App styles -->
         <link rel="stylesheet" href="{{ asset('fonts/MuseoSansCyrl/MuseoSansCyrlNew.css') }}" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="{{ asset('css/slick_1.8.1.min.css') }}" />
         <link rel="stylesheet" href="{{ asset('css/slick_1.8.1_theme.min.css') }}" />
         <link rel="stylesheet" href="{{ asset('css/style.css?v=' . time()) }}" />
@@ -42,6 +43,7 @@
         </script>
 
         <script type="text/javascript" src="{{ asset('/js/jquery-3.7.1.min.js') }}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script type="text/javascript" src="{{ asset('/js/jwplayer-7.4.2/jwplayerwithkey_v2.js') }}"></script>
         <script type="text/javascript" src="{{ asset('/js/slick_1.8.1.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('/js/dselect.js') }}"></script>

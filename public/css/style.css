@@ -85,7 +85,7 @@ ul>li:before{display: none;}
 .women-slider__one img{display: block; width: 450px; -moz-transition: all 500ms linear; -o-transition: all 500ms linear; -webkit-transition: all 500ms linear;}
 .women-slider__one.slick-slide{height: inherit;}
 .women-slider__one.slick-current{-webkit-filter: grayscale(0%); -moz-filter: grayscale(0%); -ms-filter: grayscale(0%); -o-filter: grayscale(0%); filter: grayscale(0%); filter: inherit;}
-.women-slider__name{position: absolute; right: 10px; bottom: 5px; color: var(--color-type_5); font-size: 30px;}
+.women-slider__name{position: absolute; right: 10px; bottom: 5px; color: #fff; font-size: 30px;}
 .women-slider__photo{position: absolute; top: 10px; right: -100px; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; color: var(--color-type_5); opacity: 0; -moz-transition: all 500ms linear; -o-transition: all 500ms linear; -webkit-transition: all 500ms linear;}
 .women-slider__photo svg{display: block; fill: var(--color-type_5); width: 27px; height: 23px; margin-left: 5px;}
 .women-slider__photo span{position: relative; top: 3px;}

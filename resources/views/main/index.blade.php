@@ -8,8 +8,6 @@
     @include('components/index/individual')
     @include('components/index/interior')
 
-    <!-- Модальные окна -->
-    @include('components/modal/masseuses')
     @include('components/modal/programs')
 @endsection
 
