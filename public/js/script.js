@@ -87,7 +87,7 @@
             $.ajax({
                 type: block.data('type'),
                 url: block.data('action'),
-                data: { '_token': token },
+                data: block.serialize(),
                 dataType: "json",
                 beforeSend: function(){
                     block.find('[type="submit"]').addClass('loadblock s50');

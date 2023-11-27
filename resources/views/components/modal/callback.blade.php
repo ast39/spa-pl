@@ -4,6 +4,7 @@
     
     <div class="modal-girl__wrapper">
         <form class="modal-form" data-form_send="callback" data-action="#" data-type="post">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input type="hidden" name="type" value="">
             <input type="hidden" name="type_text" value="">
         

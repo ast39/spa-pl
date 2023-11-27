@@ -78,7 +78,7 @@ ul>li:before{display: none;}
 .menu-langs .flagarrow{display: block; width: 13px; height: 16px; fill: #ffffff; -moz-transition: all 200ms linear; -o-transition: all 200ms linear; -webkit-transition: all 200ms linear;}
 .menu-langs:hover .flagarrow{fill: var(--color-type_2); -moz-transform: rotate(180deg); -webkit-transform: rotate(180deg); -o-transform: rotate(180deg); -ms-transform: rotate(180deg); transform: rotate(180deg);}
 .menu-langs__list{position: absolute; background: var(--color-type_3); top: 53px; right: 0px; border-radius: 10px; width: 200px;}
-.menu-langs__list__one{color: #fff; cursor: pointer; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; padding: 5px 10px; -moz-transition: all 200ms linear; -o-transition: all 200ms linear; -webkit-transition: all 200ms linear;}
+.menu-langs__list__one{color: #fff; cursor: pointer; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; padding: 5px 10px; -moz-transition: all 200ms linear; -o-transition: all 200ms linear; -webkit-transition: all 200ms linear; text-decoration: none;}
 .menu-langs__list__one span{-webkit-box-flex: 1; -moz-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto;}
 .menu-langs__list__one:hover{color: var(--color-type_2);}
 .menu-line2.sandwich{cursor: pointer; display: none;}

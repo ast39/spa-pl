@@ -17,10 +17,8 @@
                 <div class="menu-langs__list hide" data-open_block_content="langs">
                     @foreach (config('languages') as $lang => $language)
                         @if ($lang != App::getLocale())
-                            <a href="{{ route('lang.switch', $lang) }}">
-                                <div class="menu-langs__list__one">
-                                    <svg class="flagsico"><use xlink:href="#circle-flags512-{{ $lang }}"></use></svg> <span>{{ $language }}</span>
-                                </div>
+                            <a href="{{ route('lang.switch', $lang) }}" class="menu-langs__list__one">
+                                <svg class="flagsico"><use xlink:href="#circle-flags512-{{ $lang }}"></use></svg> <span>{{ $language }}</span>
                             </a>
                         @endif
                     @endforeach
