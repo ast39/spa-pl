@@ -99,5 +99,5 @@
     </div>
 </section>
 
-<!-- Модальные окна -->
+<!-- Модальное окно -->
 @include('components/modal/masseuses')

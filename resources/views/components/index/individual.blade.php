@@ -9,7 +9,7 @@
         </div>
         
         <div class="individual-btn">
-            <div class="btn btn-type1 pulse">Позвонить</div>
+            <div class="btn btn-type1 pulse" data-open_modal="callback" data-type="3">Позвонить</div>
         </div>
     </div>
 </section>

@@ -9,12 +9,28 @@
     --color-type_6: #141110;
     --color-type_7: #0a0a0a;
     --color-type_8: #100c09;
+    --color-type_9: #40221f;
+    --color-type_10: #242f1e;
 }
 
 *, *:before, *:after{box-sizing: border-box;}
 html, body{margin: 0px; width: 100%; padding: 0px; font-family: MuseoSansCyrlNew; color: #000; font-size: 18px; text-align: justify; font-weight: 100; overflow: hidden; overflow-y: auto;}
 :focus {outline: 0px;}
 p, div, span{line-height: 1.2em}
+
+input[type="text"],
+input[type="email"]{padding: 15px; background: var(--color-type_3); text-shadow: none; border: 0px; width: 100%; font-size: 16px; font-family: MuseoSansCyrlNew;  color: #fff;}
+input::placeholder{color: var(--color-type_5);}
+
+/* загрузчик */
+.ppss-loadcontent{min-height: 80px;}
+.loadblock{position: relative; overflow: hidden; pointer-events: none;}
+.loadblock:after{content: ''; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; background: var(--color-type_2); z-index: 6;}
+.loadblock:before{content: ''; position: absolute; background: url(/../images/loader.svg) no-repeat; width: 100px; height: 100px; left: 50%; margin-left: -50px; top: 50%; margin-top: -50px; z-index: 7;}
+.loadblock.s25:before{width: 25px; height: 25px; margin-left: -12.5px; margin-top: -12.5px;}
+.loadblock.s50:before{width: 50px; height: 50px; margin-left: -25px ; margin-top: -25px;}
+.loadblock.s75:before{width: 75px; height: 75px; margin-left: -37.5px; margin-top: -37.5px;}
+.nothing{pointer-events: none; opacity: 0.5;}
 
 p:first-child{margin-top: 0px; padding-top: 0px;}
 p:last-child{margin-bottom: 0px; padding-bottom: 0px;}
@@ -35,7 +51,7 @@ ul>li:before{display: none;}
 .transition__4s{-webkit-transition: 400ms; -moz-transition: 400ms; -o-transition: 400ms; transition: 400ms;}
 .transition__2s_all{-moz-transition: all 200ms linear; -o-transition: all 200ms linear; -webkit-transition: all 200ms linear;}
 
-.btn{text-decoration: none; text-transform: uppercase; background: #000000; color: #ffffff; border-radius: 8px; display: inline-block; padding: 15px 20px; cursor: pointer; -moz-transition: all 200ms linear; -o-transition: all 200ms linear; -webkit-transition: all 200ms linear;}
+.btn{text-decoration: none; text-transform: uppercase; background: #000000; color: #ffffff; border-radius: 8px; display: inline-block; padding: 15px 20px; cursor: pointer; -moz-transition: all 200ms linear; -o-transition: all 200ms linear; -webkit-transition: all 200ms linear; border: 0px;}
 .btn:hover{opacity: 0.8;}
 .btn.pulse{animation: callbackpulse 1.5s infinite;}
 .btn-type1{background: var(--color-type_2); color: var(--color-type_1);}
@@ -78,13 +94,16 @@ ul>li:before{display: none;}
 .banner-one__head .rotate{grid-area: line; opacity: 0; -moz-transition: all 500ms linear; -o-transition: all 500ms linear; -webkit-transition: all 500ms linear;}
 .banner-one__head .rotate.active{opacity: 1;}
 .banner-one__btn{}
+.banner .background-video2{width: 100%; height: 100%; object-fit: cover; position: absolute; left: 0; top: 0; z-index: -1; display: none;}
 
 .women-slider__wrapper{position: relative;}
 .women-slider{width: calc(100% + 120px); position: relative; left: -60px;}
-.women-slider__one{cursor: pointer; position: relative; -webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); -ms-filter: grayscale(100%); -o-filter: grayscale(100%); filter: grayscale(100%); filter: gray; -moz-transition: all 500ms linear; -o-transition: all 500ms linear; -webkit-transition: all 500ms linear; overflow: hidden;}
-.women-slider__one img{display: block; width: 450px; -moz-transition: all 500ms linear; -o-transition: all 500ms linear; -webkit-transition: all 500ms linear;}
+.women-slider__one{cursor: pointer; position: relative; overflow: hidden;}
+.women-slider__one img{display: block; width: 450px; -webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); -ms-filter: grayscale(100%); -o-filter: grayscale(100%); filter: grayscale(100%); filter: gray; }
 .women-slider__one.slick-slide{height: inherit;}
-.women-slider__one.slick-current{-webkit-filter: grayscale(0%); -moz-filter: grayscale(0%); -ms-filter: grayscale(0%); -o-filter: grayscale(0%); filter: grayscale(0%); filter: inherit;}
+.women-slider__one.slick-slide img{-webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); -ms-filter: grayscale(100%); -o-filter: grayscale(100%); filter: grayscale(100%);}
+.women-slider__one.modal-active{z-index: 1;}
+.women-slider__one.modal-active img{-webkit-filter: grayscale(0%); -moz-filter: grayscale(0%); -ms-filter: grayscale(0%); -o-filter: grayscale(0%); filter: grayscale(0%); filter: inherit; -moz-transition: all 500ms linear; -o-transition: all 500ms linear; -webkit-transition: all 500ms linear;}
 .women-slider__name{position: absolute; right: 10px; bottom: 5px; color: #fff; font-size: 30px;}
 .women-slider__photo{position: absolute; top: 10px; right: -100px; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; color: var(--color-type_5); opacity: 0; -moz-transition: all 500ms linear; -o-transition: all 500ms linear; -webkit-transition: all 500ms linear;}
 .women-slider__photo svg{display: block; fill: var(--color-type_5); width: 27px; height: 23px; margin-left: 5px;}
@@ -167,6 +186,9 @@ ul>li:before{display: none;}
 .modal-girl__info__desc__text{margin-top: 10px;}
 
 .modal-program:after{content: ''; background: url(/images/temporary/kaliningrad/girl6.jpg); width: 100%; height: 100%; position: absolute; left: 0px; top: 0px; opacity: 0.1; background-size: cover; background-position: center; z-index: -1;}
+.modal-program .modal-girl__wrapper{max-width: 800px;}
+
+.modal-taxi:after{content: ''; background: url(/images/temporary/kaliningrad/taxi.jpg); width: 100%; height: 100%; position: absolute; left: 0px; top: 0px; opacity: 0.03; background-size: cover; background-position: center; z-index: -1;}
 
 .advantages-list{display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; margin: 0 -20px;}
 .advantages-list__one{width: calc(100%/3 - 40px); margin: 20px; background: rgba(0, 0, 0, 0.02); padding: 20px 10px; border-radius: 10px;}
@@ -182,11 +204,19 @@ ul>li:before{display: none;}
 .individual .section-wrapper__desc{color: #fff;}
 .individual-btn{text-align: center;}
 
+.vacancies{position: relative;}
+.vacancies .background-video{-moz-transform: rotate(180deg); -webkit-transform: rotate(180deg); -o-transform: rotate(180deg); -ms-transform: rotate(180deg); transform: rotate(180deg);}
+.vacancies:after{content: ''; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; background: url(/images/temporary/kaliningrad/girl12.jpg); background-size: cover; opacity: 0.3; background-position: center; -moz-transform: scale(-1, 1); -webkit-transform: scale(-1, 1); transform: scale(-1, 1);}
+.vacancies .section-wrapper{position: relative; z-index: 1;}
+.vacancies .section-wrapper__head{color: #fff;}
+.vacancies .section-wrapper__desc{color: #fff;}
+.vacancies-btn{text-align: center;}
+
 .interior{}
 .interior-photo__wrapper{position: relative;}
 .interior-photo{width: calc(100% + 120px); position: relative; left: -60px;}
-.interior-photo__one{width: 640px; background-size: cover; background-position: center; height: 427px; position: relative; -webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); -ms-filter: grayscale(100%); -o-filter: grayscale(100%); filter: grayscale(100%); filter: gray; -moz-transition: all 500ms linear; -o-transition: all 500ms linear; -webkit-transition: all 500ms linear; overflow: hidden; cursor: pointer;}
-.interior-photo__one.slick-current{-webkit-filter: grayscale(0%); -moz-filter: grayscale(0%); -ms-filter: grayscale(0%); -o-filter: grayscale(0%); filter: grayscale(0%); filter: inherit;}
+.interior-photo__one{width: 640px; background-size: cover; background-position: center; height: 427px; position: relative; -webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); -ms-filter: grayscale(100%); -o-filter: grayscale(100%); filter: grayscale(100%); filter: gray; overflow: hidden; cursor: pointer;}
+.interior-photo__one.modal-active{-webkit-filter: grayscale(0%); -moz-filter: grayscale(0%); -ms-filter: grayscale(0%); -o-filter: grayscale(0%); filter: grayscale(0%); filter: inherit; -moz-transition: all 500ms linear; -o-transition: all 500ms linear; -webkit-transition: all 500ms linear;}
 .interior-photo__arrow{}
 .interior-photo__arrow__one{position: absolute; top: calc(50% - 24.5px);}
 .interior-photo__arrow__one.left{left: calc(50% - 320px);}
@@ -206,6 +236,30 @@ ul>li:before{display: none;}
 .footer-one__btn{}
 
 .slick-vertical .slick-slide{border: 0px;}
+
+.modal-form{overflow: hidden; background-color: rgba(255, 255, 255, 0.1); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); z-index: 0; padding: 20px; border: 1px solid rgba(255, 255, 255, 0.04); margin-top: 20px; color: #fff; -webkit-box-flex: 1; -moz-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-justify-content: flex-end; -ms-flex-pack: end; justify-content: flex-end;}
+.modal-form__head{font-size: 30px; color: var(--color-type_2); font-weight: 300; text-align: center; margin-bottom: 20px;}
+.modal-form__content{display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; margin: -10px;}
+.modal-form__content__one{width: calc(100%/3 - 20px); margin: 10px;}
+.modal-callback:after{content: ''; background: url(/images/temporary/kaliningrad/girl6.jpg); width: 100%; height: 100%; position: absolute; left: 0px; top: 0px; opacity: 0.1; background-size: cover; background-position: center; z-index: -1;}
+.modal-form__btn{margin-top: 20px; text-align: center;}
+.modal-form__btn .btn{padding: 14px 20px 12px 20px; display: block; max-width: 300px; margin: 0 auto; width: 100%;}
+
+.modal-form__alert{background: var(--color-type_9); padding: 10px; text-align: center; margin-top: 20px;}
+.modal-form__alert.success{background: var(--color-type_10);}
+
+.tools{position: fixed; right: 10px; bottom: 10px;}
+.tools__one{background: var(--color-type_2); width: 54px; height: 54px; border-radius: 100%; margin-bottom: 10px; position: relative; -moz-transition: all 500ms linear; -o-transition: all 500ms linear; -webkit-transition: all 500ms linear; cursor: pointer;}
+.tools__one:last-child{margin-bottom: 0px;}
+.tools__one svg{width: 35px; height: 35px; position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; margin: auto; display: block; fill: #000;}
+.tools__one.up svg{-moz-transform: rotate(270deg); -webkit-transform: rotate(270deg); -o-transform: rotate(270deg); -ms-transform: rotate(270deg); transform: rotate(270deg);}
+.tools__one:hover{opacity: 0.8;}
+.tools__one.opacity{opacity: 0;}
+
+.masonry-gallery{background: rgba(0, 0, 0, 0.2); padding: 5px; margin-top: 20px;}
+.masonry-gallery__one{padding: 2px; width: 249.3px;}
+.masonry-gallery__one img{width: 100%; display: block; -moz-transition: all 500ms linear; -o-transition: all 500ms linear; -webkit-transition: all 500ms linear;}
+.masonry-gallery__one img:hover{opacity: 0.5;}
 
 .hide{display: none;}
 
@@ -257,6 +311,8 @@ ul>li:before{display: none;}
     .advantages-list{margin: 0 -10px;}
     .advantages-list__one{width: calc(100%/2 - 20px); margin: 10px;}
     
+    .banner .background-video, .banner:after{display: none;}
+    .banner .background-video2{display: block;}
 }
 
 @media screen and (max-width: 800px) {
@@ -277,6 +333,8 @@ ul>li:before{display: none;}
     .interior-photo__one{width: 320px; height: 210px;}
     .interior-photo__arrow__one.left{left: calc(50% - 160px);}
     .interior-photo__arrow__one.right{right: calc(50% - 160px);}
+    
+    .modal-form__content__one{width: calc(100% - 20px);}
 }
 
 @media screen and (max-width: 700px) {

@@ -281,3 +281,6 @@
         </div>
     </div>
 </section>
+
+<!-- Модальное окно -->
+@include('components/modal/programs')

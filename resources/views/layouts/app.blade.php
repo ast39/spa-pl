@@ -27,13 +27,16 @@
         <link rel="stylesheet" href="{{ asset('css/style.css?v=' . time()) }}" />
     </head>
 
-    <body>
+    <body data-anchor_block="body">
         <!-- шапка -->
         @include('components/navbar')
 
         <main class="py-4 site-conteiner">
             <div>@yield('content')</div>
         </main>
+        
+        <!-- Инструменты -->
+        @include('components/tools')
         
         <!-- подвал -->
         @include('components/footer')
@@ -44,9 +47,11 @@
 
         <script type="text/javascript" src="{{ asset('/js/jquery-3.7.1.min.js') }}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js" integrity="sha512-JRlcvSZAXT8+5SQQAvklXGJuxXTouyq8oIMaYERZQasB8SBDHZaUbeASsJWpk0UUrf89DP3/aefPPrlMR1h1yQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script type="text/javascript" src="{{ asset('/js/jwplayer-7.4.2/jwplayerwithkey_v2.js') }}"></script>
         <script type="text/javascript" src="{{ asset('/js/slick_1.8.1.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('/js/dselect.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('/js/miniinput_mask.js') }}"></script>
         <script type="text/javascript" src="{{ asset('/js/script.js?v=' . time()) }}"></script>
 
         <!-- JS grubber -->

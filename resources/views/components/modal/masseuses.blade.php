@@ -45,35 +45,35 @@
                         
                         <div class="modal-girl__info__size">
                             <div class="modal-girl__info__size__one">
-                                <div class="modal-girl__info__size__count">Возраст</div>
+                                <div class="modal-girl__info__size__count">{{ __('Возраст') }}</div>
                                 <div class="modal-girl__info__size__text">{{ $v['age'] }}</div>
                             </div>
                             
                             <div class="modal-girl__info__size__one">
-                                <div class="modal-girl__info__size__count">Размер груди</div>
+                                <div class="modal-girl__info__size__count">{{ __('Размер груди') }}</div>
                                 <div class="modal-girl__info__size__text">{{ $v['bust_size'] }}</div>
                             </div>
                             
                             <div class="modal-girl__info__size__one">
-                                <div class="modal-girl__info__size__count">Рост</div>
+                                <div class="modal-girl__info__size__count">{{ __('Рост') }}</div>
                                 <div class="modal-girl__info__size__text">{{ $v['height'] }}</div>
                             </div>
                             
                             <div class="modal-girl__info__size__one">
-                                <div class="modal-girl__info__size__count">Вес</div>
+                                <div class="modal-girl__info__size__count">{{ __('Вес') }}</div>
                                 <div class="modal-girl__info__size__text">{{ $v['weight'] }}</div>
                             </div>
                         </div>
                         
                         <div class="modal-girl__info__btn">
-                            <div class="btn btn-type1 pulse">Позвонить</div>
+                            <div class="btn btn-type1 pulse" data-open_modal="callback" data-type="4" data-callback_girl="{{ $v['name'] }}">{{ __('Хочу её') }}</div>
                         </div>
                     </div>
                 </div>
             </div>
             
             <div class="modal-girl__info">
-                <div class="modal-girl__info__name">Мастер эротического массажа {{ $v['name'] }}</div>
+                <div class="modal-girl__info__name">{{ __('Мастер эротического массажа') }} {{ $v['name'] }}</div>
                 <div class="modal-girl__info__desc__text"><?= htmlspecialchars_decode($v['info']) ?></div>
             </div>
         </div>

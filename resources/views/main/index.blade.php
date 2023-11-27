@@ -7,8 +7,7 @@
     @include('components/index/advantages')
     @include('components/index/individual')
     @include('components/index/interior')
-
-    @include('components/modal/programs')
+    @include('components/index/vacancies')
 @endsection
 
 @section('title')

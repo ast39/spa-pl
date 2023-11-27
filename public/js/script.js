@@ -13,7 +13,99 @@
         funcSliderGirlView();
         funcSliderInterier();
         funcInitVideo();
+        
+        funcCallback();
+        funcAnchor();
+        funcGallery();
+        
+        
     });
+    
+    /* ---------- Функция запуска системы галереи ---------- */
+    function funcGallery(){
+        if($('[data-masonry]').length > 0){
+            $('[data-masonry]').each(function(){
+                let block = $(this);
+                
+                block.masonry({
+                    itemSelector: '.masonry-gallery__one',
+                    columnWidth: 249.3
+                });
+            });
+        }
+    }
+    
+    /* ---------- Функция плавного якоря ---------- */
+    function funcAnchor(){
+        opacityAnchor();
+        $(window).resize(function(){ opacityAnchor(); });
+        $(window).scroll(function(){ opacityAnchor(); });
+
+        $('body').on('click', '[data-anchor]', function(){
+            $("html, body").animate({scrollTop: $('[data-anchor_block="' + $(this).data('anchor') + '"]').offset().top - 20}, 500);
+        });
+        
+        function opacityAnchor(){
+            $('[data-anchor]').each(function(){
+                let block = $(this);
+                
+                if(block.attr('data-anchor_show') !== undefined){
+                    if($(window).scrollTop() > parseFloat(block.data('anchor_show'))){
+                        block.removeClass('opacity');
+                    } else {
+                        block.addClass('opacity');
+                    }
+                }
+            });
+        }
+    }
+    
+    /* ---------- Функция заказа обратного звонка ---------- */
+    function funcCallback(){
+        /* ---------- Открытие формы в модальном окне ---------- */
+        $('body').on('click', '[data-open_modal="callback"]', function(){
+            let block = $(this),
+                type = block.data('type'),
+                modal = $('[data-open_modal_content="' + block.data('open_modal') + '"]'),
+                type_text = type_list[type];
+
+            if (type == '4' && block.attr('data-callback_girl') !== undefined) { type_text = type_text + ': ' + block.data('callback_girl'); }
+            if (type == '5' && block.attr('data-callback_program') !== undefined) { type_text = type_text + ': ' + block.data('callback_program'); }
+
+            modal.find('input[name="type"]').val(type);
+            modal.find('input[name="type_text"]').val(type_text);
+            modal.find('[data-alert]').addClass('hide').removeClass('success');
+            modal.find('[data-form_send="callback"]')[0].reset();
+        });
+        
+        /* ---------- Отправка формы обратного звонка ---------- */
+        $('body').on('submit', '[data-form_send="callback"]', function(){
+            let block = $(this);
+            
+            block.find('[data-alert]').addClass('hide').removeClass('success');
+            
+            $.ajax({
+                type: block.data('type'),
+                url: block.data('action'),
+                data: { '_token': token },
+                dataType: "json",
+                beforeSend: function(){
+                    block.find('[type="submit"]').addClass('loadblock s50');
+                },
+                success:function(msg){
+                    block.find('[type="submit"]').removeClass('loadblock s25');
+                    
+                    if(!msg.error){
+                        form.find('[data-alert]').removeClass('hide').html(alert_text[1]);
+                    } else {
+                        form.find('[data-alert]').removeClass('hide').addClass('success').html(alert_text[2]);
+                    }
+                }
+            });
+            
+            return false;
+        });
+    }
     
     /* ---------- Функция работы с модальным окном ---------- */
     function funcModal(){
@@ -28,6 +120,8 @@
                     $('[data-open_modal_content="' + $(this).data('open_modal') + '"]').removeClass('hide');
                     funcSliderGirlView();
                     $('html').css({ 'overflow': 'hidden' });
+                    
+                    funcGallery();
                 }
             }
         });
@@ -85,6 +179,10 @@
         let slick = $('[data-slick_interior]');
         
         if(slick.length > 0){
+            slick.on('init', function(event, slick) {
+                slick.slickGoTo(0);
+            });
+            
             slick.slick({
                 dots: false,
                 infinite: true,
@@ -96,7 +194,14 @@
                 variableWidth: true,
                 focusOnSelect: true,
                 prevArrow: $('.interior-photo__arrow__one.left'),
-                nextArrow: $('.interior-photo__arrow__one.right')
+                nextArrow: $('.interior-photo__arrow__one.right'),
+                autoplay: true,
+                autoplaySpeed: 3000
+            });
+
+            slick.on('afterChange', function (event, slick, currentSlide) {
+                $('[data-slick_interior]').find('.modal-active').removeClass('modal-active');
+                $(slick.$slides[currentSlide]).addClass('modal-active');
             });
         }
     }
@@ -119,7 +224,9 @@
                 fade: true,
                 asNavFor: '.modal-girl__photo__preview',
                 prevArrow: $('.modal-girl__photo__full__arrow__one.left'),
-                nextArrow: $('.modal-girl__photo__full__arrow__one.right')
+                nextArrow: $('.modal-girl__photo__full__arrow__one.right'),
+                autoplay: true,
+                autoplaySpeed: 3000
             });
             
             slick2.slick({
@@ -129,7 +236,9 @@
                 arrows: false,
                 focusOnSelect: true,
                 vertical: true,
-                asNavFor: '.modal-girl__photo__full'
+                asNavFor: '.modal-girl__photo__full',
+                autoplay: true,
+                autoplaySpeed: 3000
             });
         }
     }
@@ -152,14 +261,17 @@
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 centerMode: true,
+                centerPadding: '0px',
                 variableWidth: true,
                 focusOnSelect: true,
                 prevArrow: $('.women-slider__wrapper__arrow__one.left'),
-                nextArrow: $('.women-slider__wrapper__arrow__one.right')
+                nextArrow: $('.women-slider__wrapper__arrow__one.right'),
+                autoplay: true,
+                autoplaySpeed: 3000
             });
 
             slick.on('afterChange', function (event, slick, currentSlide) {
-                $(slick.$slides[(currentSlide - 1)]).removeClass('modal-active');
+                $('[data-slider_girl]').find('.modal-active').removeClass('modal-active');
                 $(slick.$slides[currentSlide]).addClass('modal-active');
             });
         }
