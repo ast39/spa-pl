@@ -18,7 +18,14 @@
         funcAnchor();
         funcGallery();
         
-        
+        setTimeout(function(){
+            if($('.slick-cloned[data-fancybox]').length > 0){
+                $('.slick-cloned[data-fancybox]').each(function(){
+                    let block = $(this);
+                    block.removeAttr('data-fancybox');
+                });
+            }
+        }, 1000);
     });
     
     /* ---------- Функция запуска системы галереи ---------- */

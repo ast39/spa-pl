@@ -1,7 +1,7 @@
 <!-- Баннер -->
 <section class="banner">
     <video class="background-video" autoplay loop muted><source src="{{ asset('images/temporary/kaliningrad/video/particle.mp4') }}" type="video/mp4"></video>
-    <video class="background-video2" autoplay loop muted><source src="{{ asset('images/temporary/kaliningrad/video/particle5.mp4') }}" type="video/mp4"></video>
+    <video class="background-video2" autoplay loop muted><source src="{{ asset('images/presentation.mp4') }}" type="video/mp4"></video>
     
     <div class="banner-wrapper">
         <div class="banner-one">

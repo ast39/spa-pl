@@ -1,3 +1,9 @@
+@php
+    use App\Http\Libs\Helper;
+    
+    $interior = Helper::getPhotosInterier();
+@endphp
+
 <!-- Интерьер -->
 <section class="section-padding interior">
     <div class="section-wrapper">
@@ -9,12 +15,9 @@
     
     <div class="interior-photo__wrapper">
         <div class="interior-photo" data-slick_interior>
-            <div class="interior-photo__one" style="background-image: url({{ asset('images/temporary/kaliningrad/interior/interier1.jpg') }})"></div>
-            <div class="interior-photo__one" style="background-image: url({{ asset('images/temporary/kaliningrad/interior/interier2.jpg') }})"></div>
-            <div class="interior-photo__one" style="background-image: url({{ asset('images/temporary/kaliningrad/interior/interier3.jpg') }})"></div>
-            <div class="interior-photo__one" style="background-image: url({{ asset('images/temporary/kaliningrad/interior/interier1.jpg') }})"></div>
-            <div class="interior-photo__one" style="background-image: url({{ asset('images/temporary/kaliningrad/interior/interier2.jpg') }})"></div>
-            <div class="interior-photo__one" style="background-image: url({{ asset('images/temporary/kaliningrad/interior/interier3.jpg') }})"></div>
+            @foreach($interior as $k => $v)
+                <a href="{{ asset('images/interier/'.$v) }}" class="interior-photo__one" style="background-image: url({{ asset('images/interier/preview/'.$v) }})" data-fancybox="interior"></a>
+            @endforeach
         </div>
         
         <div class="interior-photo__arrow">
